@@ -19,16 +19,17 @@ package com.hannesdorfmann.annotationprocessing101.factory;
 import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
 
 /**
- * @author Hannes Dorfmann
+ * @author February
  */
 
 @Factory(
-    id = "Tiramisu",
-    type = Meal.class
+        id = "banana",
+        type = Fruit.class
 )
-public class Tiramisu implements Meal {
+public class Banana implements Fruit {
 
-  @Override public float getPrice() {
-    return 4.5f;
-  }
+    @Override
+    public float getPrice(String name) {
+        return 6f;
+    }
 }

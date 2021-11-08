@@ -16,9 +16,19 @@
 
 package com.hannesdorfmann.annotationprocessing101.factory;
 
+import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
+
 /**
- * @author Hannes Dorfmann
+ * @author February
  */
-public interface Meal {
-  public float getPrice();
+@Factory(
+        id = "orange",
+        type = Fruit.class
+)
+public class Orange implements Fruit {
+
+    @Override
+    public float getPrice(String name) {
+        return 8.5f;
+    }
 }

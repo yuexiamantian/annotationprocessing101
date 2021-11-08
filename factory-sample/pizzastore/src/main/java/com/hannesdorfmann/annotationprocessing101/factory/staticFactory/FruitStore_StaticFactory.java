@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-package com.hannesdorfmann.annotationprocessing101.factory;
+package com.hannesdorfmann.annotationprocessing101.factory.staticFactory;
 
-import com.hannesdorfmann.annotationprocessing101.factory.annotation.Factory;
+import com.hannesdorfmann.annotationprocessing101.factory.ConsoleUtil;
+import com.hannesdorfmann.annotationprocessing101.factory.Fruit;
+
+import java.io.IOException;
 
 /**
- * @author Hannes Dorfmann
+ * @author February
  */
+public class FruitStore_StaticFactory {
 
-@Factory(
-    id = "Margherita",
-    type = Meal.class
-)
-public class MargheritaPizza implements Meal {
+    public static final StaticMealFactory factory = new StaticMealFactory();
 
-  @Override public float getPrice() {
-    return 6f;
-  }
+    public static void main(String[] args) throws IOException {
+        Fruit fruit = factory.create(ConsoleUtil.readConsole());
+        System.out.println("Bill: $" + fruit.getPrice(""));
+    }
 }
